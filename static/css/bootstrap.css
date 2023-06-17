@@ -1,0 +1,40 @@
+ul{
+    background-color: black;
+    width: 100%;
+    margin: 0px 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    list-style-type: none;
+    padding: 10px 10px;
+}
+
+li{
+    width: fit-content;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    color: gray;
+}
+
+a:hover{
+    background-color: gray;
+    color: white
+}
+
+a.active{
+    background-color: gray;
+    color: white
+}
+
+a.active:hover{
+    background-color: rgb(75, 72, 72);
+}
