@@ -5,7 +5,7 @@
 {% block title %}<title>Projects</title>{% endblock title %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/home_page.css' %}"> 
+<link id="projects-theme-style" rel="stylesheet" href="{% static 'css/home_page.css' %}"> 
 {% include 'nav_bar.html' %}
 
 <div class="table-container">
@@ -30,5 +30,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    const projectthemeStyle = document.getElementById('projects-theme-style');
+    
+    // Check if theme preference is stored in localStorage
+    const savedprojectTheme = localStorage.getItem('projecttheme');
+    if (savedprojectTheme) {
+        projectthemeStyle.href = savedprojectTheme;
+    }
+    
+        
+    themeToggle.addEventListener('click', function() {
+      const currentprojectTheme = projectthemeStyle.getAttribute('href');
+      const isLight = currentprojectTheme === "{% static 'css/home_page_light.css' %}";
+    
+      // Toggle theme and store preference in localStorage
+      if (isLight) {
+        projectthemeStyle.href = "{% static 'css/home_page.css' %}";
+        localStorage.setItem('projecttheme', "{% static 'css/home_page.css' %}");
+      } else {
+        projectthemeStyle.href = "{% static 'css/home_page_light.css' %}";
+        localStorage.setItem('projecttheme', "{% static 'css/home_page_light.css' %}");
+      }
+    });
+    
+</script>
 
 {% endblock content %}

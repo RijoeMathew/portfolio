@@ -4,12 +4,54 @@
 {% load active_link_tags %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link id="theme-style" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/togglestyle.css' %}">
 <ul>
     <li><a class="nav {% active_link 'homepage' strict=True %}" href="{% url 'homepage' %}">Home</a></li>
     <li><a class="nav {% active_link 'aboutpage' 'active' %}" href="{% url 'aboutpage' %}">About</a></li>
     <li><a class="nav {% active_link 'dashboardspage' 'active' %}" href="{% url 'dashboardspage' %}">Dashboards</a></li>
     <li><a class="nav {% active_link 'projectspage' 'active' %}" href="{% url 'projectspage' %}">Projects</a></li>
+    <li style="float:right; padding: 8px 20px;">
+        <label class="toggle-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="toggle-slider"></span>
+        </label>
+    </li>
 </ul>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeStyle = document.getElementById('theme-style');
+    
+    // Check if theme preference is stored in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      themeStyle.href = savedTheme;
+    }
+    
+    // Check if toggle state is stored in localStorage
+    const savedToggleState = localStorage.getItem('toggleState');
+    if (savedToggleState) {
+      themeToggle.checked = savedToggleState === 'dark';
+    }
+    
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = themeStyle.getAttribute('href');
+      const isLight = currentTheme === "{% static 'css/bootstrap_light.css' %}";
+    
+      // Toggle theme and store preference in localStorage
+      if (isLight) {
+        themeStyle.href = "{% static 'css/bootstrap.css' %}";
+        localStorage.setItem('theme', "{% static 'css/bootstrap.css' %}");
+      } else {
+        themeStyle.href = "{% static 'css/bootstrap_light.css' %}";
+        localStorage.setItem('theme', "{% static 'css/bootstrap_light.css' %}");
+      }
+    
+      // Store toggle state in localStorage
+      localStorage.setItem('toggleState', themeToggle.checked ? 'dark' : 'light');
+    });
+    
+</script>
 
 {% endblock content %}

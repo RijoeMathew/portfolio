@@ -1,7 +1,7 @@
 h2{
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: rgb(9, 9, 34);
+    background-color: rgb(83, 110, 185);
     width: 95%;
     padding: 20px 20px;
     border-radius: 10px;
@@ -11,7 +11,7 @@ h2{
 
 a.weblinks{
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;
@@ -21,7 +21,7 @@ a.weblinks{
 a.gitlinks
 {
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;
@@ -30,7 +30,7 @@ a.gitlinks
 }
 
 a.weblinks:hover{
-    background-color: rgb(9, 9, 48);
+    background-color: rgb(48, 9, 27);
 }
 
 a.gitlinks:hover{
@@ -38,7 +38,7 @@ a.gitlinks:hover{
 }
 
 div.first{
-    background-color: rgb(29, 28, 28);
+    background-color: rgb(172, 93, 116);
     width: fit-content;
     padding: 10px 100px 100px 100px;
     margin: auto;
@@ -50,7 +50,7 @@ div.first{
 
 
 div.second{
-    background-color: rgb(29, 28, 28);
+    background-color: rgb(172, 93, 116);
     width: fit-content;
     padding: 10px 100px 100px 100px;
     margin: auto;
