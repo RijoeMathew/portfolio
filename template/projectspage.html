@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Projects</title>{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}"> 
+{% include 'nav_bar.html' %}
+
+<div class="table-container">
+    <div class="table-cell">
+        <div class="first">
+            <h2>Online Appointment System</h2>
+            <video width="640" height="480" src="{% static 'video/djangowebapp.mp4' %}" autoplay loop muted playsinline>Your browser does not support this type of video</video> 
+            <br>
+            <a class="weblinks" href="https://frontrunners.pythonanywhere.com/" target="_blank"><span>Website</span></a>
+            
+            <a class="gitlinks" href="https://github.com/RijoeMathew/Online-Salon-Appointments" target="_blank"><span>Github</span></a>
+        </div>
+    </div>
+    <div class="table-cell">
+        <div class="second">
+            <h2>Basic Kafka Streaming</h2>
+            <video width="640" height="480" src="{% static 'video/kafkastreaming.mp4' %}" autoplay loop muted playsinline>Your browser does not support this type of video</video> 
+            <br>
+            <a class="weblinks" href="#"><span>Website</span></a>
+            
+            <a class="gitlinks" href="#"><span>Github</span></a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

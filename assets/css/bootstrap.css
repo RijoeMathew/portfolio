@@ -26,7 +26,7 @@ li{
     border-radius: 10px;
 }
 
-a{
+a.nav{
     text-decoration: none;
     padding: 15px 20px;
     display: inline-block;
@@ -34,16 +34,16 @@ a{
     color: gray;
 }
 
-a:hover{
+a.nav:hover{
     background-color: gray;
     color: white
 }
 
-a.active{
+a.nav.active{
     background-color: gray;
     color: white;    
 }
 
-a.active:hover{
+a.nav.active:hover{
     background-color: rgb(75, 72, 72);
 }
