@@ -11,7 +11,13 @@
     <li><a class="nav {% active_link 'aboutpage' 'active' %}" href="{% url 'aboutpage' %}">About</a></li>
     <li><a class="nav {% active_link 'dashboardspage' 'active' %}" href="{% url 'dashboardspage' %}">Dashboards</a></li>
     <li><a class="nav {% active_link 'projectspage' 'active' %}" href="{% url 'projectspage' %}">Projects</a></li>
-    <li style="float:right; padding: 8px 20px;">
+
+    <li><a class="nav-small {% active_link 'homepage' strict=True %}" href="{% url 'homepage' %}"><img class="nav-icon" src="{% static 'img/home-icon.png' %}" alt="home-icon" width="32" height="32"></a></li>
+    <li><a class="nav-small {% active_link 'aboutpage' 'active' %}" href="{% url 'aboutpage' %}"><img class="nav-icon" src="{% static 'img/about-icon.png' %}" alt="about-icon" width="32" height="32"></a></li>
+    <li><a class="nav-small {% active_link 'dashboardspage' 'active' %}" href="{% url 'dashboardspage' %}"><img class="nav-icon" src="{% static 'img/dashboard-icon.png' %}" alt="dashboard-icon" width="32" height="32"></a></li>
+    <li><a class="nav-small {% active_link 'projectspage' 'active' %}" href="{% url 'projectspage' %}"><img class="nav-icon" src="{% static 'img/project-icon.png' %}" alt="project-icon" width="32" height="32"></a></li>
+
+    <li class="toggle" style="float:right; padding: 8px 20px;">
         <label class="toggle-switch" for="theme-toggle">
             <input type="checkbox" id="theme-toggle">
             <span class="toggle-slider"></span>

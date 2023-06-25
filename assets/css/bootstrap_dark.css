@@ -49,3 +49,15 @@ a.nav.active:hover{
     background-color: rgb(75, 72, 72);
 }
 
+a.nav-small{
+    display: none;
+}
+
+@media (max-width: 600px) {
+   a.nav-small{
+    display: inline;
+   }
+   a.nav{
+    display: none;
+   }
+}

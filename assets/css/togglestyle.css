@@ -53,6 +53,10 @@
   .toggle-switch input:checked + .toggle-slider:after {
     content: "🌙";
     left: 30px;
-    color: black;
+  }
+
+  .toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+    background-color: black; /* Add this line to set the background color to black */
   }
   

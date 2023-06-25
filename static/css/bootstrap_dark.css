@@ -49,3 +49,34 @@ a.nav.active:hover{
     background-color: rgb(75, 72, 72);
 }
 
+a.nav-small{
+    display: none;
+}
+
+@media (max-width: 600px) {
+   a.nav-small{
+    display: inline;
+   }
+   a.nav{
+    display: none;
+   }
+
+   a.nav-small{
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: white;
+    margin: auto;
+    float: left;
+    position: relative;
+    left: -50px;
+    top: 25px;
+   }
+
+   ul{
+    height: 100px;
+   }
+
+
+}
