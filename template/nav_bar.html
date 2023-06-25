@@ -23,33 +23,47 @@
     const themeToggle = document.getElementById('theme-toggle');
     const themeStyle = document.getElementById('theme-style');
     
+    function applyTheme(theme) {
+      themeStyle.href = theme;
+      localStorage.setItem('theme', theme);
+    }
+    
+    function setToggleState(isChecked) {
+      themeToggle.checked = isChecked;
+      const theme = isChecked ? "{% static 'css/bootstrap.css' %}" : "{% static 'css/bootstrap_light.css' %}";
+      applyTheme(theme);
+      localStorage.setItem('toggleState', theme);
+    }
+    
+    function toggleTheme() {
+      const isChecked = themeToggle.checked;
+      setToggleState(isChecked);
+    }
+    
     // Check if theme preference is stored in localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      themeStyle.href = savedTheme;
+      applyTheme(savedTheme);
+    } else {
+      // Use system preference if available
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setToggleState(true);
+      }
     }
     
-    // Check if toggle state is stored in localStorage
+    // Set initial toggle state based on stored preference
     const savedToggleState = localStorage.getItem('toggleState');
     if (savedToggleState) {
-      themeToggle.checked = savedToggleState === 'dark';
+      const isChecked = savedToggleState === "{% static 'css/bootstrap.css' %}";
+      setToggleState(isChecked);
     }
     
-    themeToggle.addEventListener('click', function() {
-      const currentTheme = themeStyle.getAttribute('href');
-      const isLight = currentTheme === "{% static 'css/bootstrap_light.css' %}";
+    themeToggle.addEventListener('change', toggleTheme);
     
-      // Toggle theme and store preference in localStorage
-      if (isLight) {
-        themeStyle.href = "{% static 'css/bootstrap.css' %}";
-        localStorage.setItem('theme', "{% static 'css/bootstrap.css' %}");
-      } else {
-        themeStyle.href = "{% static 'css/bootstrap_light.css' %}";
-        localStorage.setItem('theme', "{% static 'css/bootstrap_light.css' %}");
-      }
-    
-      // Store toggle state in localStorage
-      localStorage.setItem('toggleState', themeToggle.checked ? 'dark' : 'light');
+    // Save toggle state before page unload
+    window.addEventListener('beforeunload', () => {
+      const isChecked = themeToggle.checked;
+      setToggleState(isChecked);
     });
     
 </script>

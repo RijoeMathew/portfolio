@@ -32,29 +32,19 @@
 </div>
 
 <script>
-    const projectthemeStyle = document.getElementById('projects-theme-style');
-    
-    // Check if theme preference is stored in localStorage
-    const savedprojectTheme = localStorage.getItem('projecttheme');
-    if (savedprojectTheme) {
-        projectthemeStyle.href = savedprojectTheme;
+    function toggleprojecttheme() {
+        const projectthemeStyle = document.getElementById('projects-theme-style');
+        const themebaseStyle = document.getElementById('theme-style');
+        const baseUrl = window.location.origin;
+        if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap.css' %}") {
+            projectthemeStyle.href = "{% static 'css/home_page.css' %}"
+        }
+        else {
+            projectthemeStyle.href = "{% static 'css/home_page_light.css' %}"
+        }
     }
     
-        
-    themeToggle.addEventListener('click', function() {
-      const currentprojectTheme = projectthemeStyle.getAttribute('href');
-      const isLight = currentprojectTheme === "{% static 'css/home_page_light.css' %}";
-    
-      // Toggle theme and store preference in localStorage
-      if (isLight) {
-        projectthemeStyle.href = "{% static 'css/home_page.css' %}";
-        localStorage.setItem('projecttheme', "{% static 'css/home_page.css' %}");
-      } else {
-        projectthemeStyle.href = "{% static 'css/home_page_light.css' %}";
-        localStorage.setItem('projecttheme', "{% static 'css/home_page_light.css' %}");
-      }
-    });
-    
+    themeToggle.addEventListener('change', toggleprojecttheme);
 </script>
 
 {% endblock content %}

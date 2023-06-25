@@ -34,7 +34,7 @@
   }
   
   .toggle-switch input:checked + .toggle-slider {
-    background-color: #2196F3;
+    background-color: rgb(83, 110, 185);
   }
   
   .toggle-switch input:checked + .toggle-slider:before {
