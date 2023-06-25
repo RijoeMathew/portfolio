@@ -33,7 +33,6 @@
 
 <script>
     function toggleprojecttheme() {
-        const projectthemeStyle = document.getElementById('projects-theme-style');
         const themebaseStyle = document.getElementById('theme-style');
         const baseUrl = window.location.origin;
         if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap.css' %}") {
@@ -42,8 +41,14 @@
         else {
             projectthemeStyle.href = "{% static 'css/home_page_light.css' %}"
         }
+        localStorage.setItem('projecttheme', projectthemeStyle.href);
     }
     
+    const projectthemeStyle = document.getElementById('projects-theme-style');
+    const savedprojectTheme = localStorage.getItem('projecttheme');
+    if (savedprojectTheme) {
+        projectthemeStyle.href = savedprojectTheme
+      }
     themeToggle.addEventListener('change', toggleprojecttheme);
 </script>
 
