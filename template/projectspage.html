@@ -5,7 +5,7 @@
 {% block title %}<title>Projects</title>{% endblock title %}
 
 {% block content %}
-<link id="projects-theme-style" rel="stylesheet" href="{% static 'css/home_page.css' %}"> 
+<link id="projects-theme-style" rel="stylesheet" href="{% static 'css/projects_page_light.css' %}"> 
 {% include 'nav_bar.html' %}
 
 <div class="table-container">
@@ -35,11 +35,11 @@
     function toggleprojecttheme() {
         const themebaseStyle = document.getElementById('theme-style');
         const baseUrl = window.location.origin;
-        if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap.css' %}") {
-            projectthemeStyle.href = "{% static 'css/home_page.css' %}"
+        if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap_dark.css' %}") {
+            projectthemeStyle.href = "{% static 'css/projects_page_dark.css' %}"
         }
         else {
-            projectthemeStyle.href = "{% static 'css/home_page_light.css' %}"
+            projectthemeStyle.href = "{% static 'css/projects_page_light.css' %}"
         }
         localStorage.setItem('projecttheme', projectthemeStyle.href);
     }

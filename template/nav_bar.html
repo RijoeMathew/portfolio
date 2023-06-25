@@ -4,7 +4,7 @@
 {% load active_link_tags %}
 
 {% block content %}
-<link id="theme-style" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link id="theme-style" rel="stylesheet" href="{% static 'css/bootstrap_light.css' %}">
 <link rel="stylesheet" href="{% static 'css/togglestyle.css' %}">
 <ul>
     <li><a class="nav {% active_link 'homepage' strict=True %}" href="{% url 'homepage' %}">Home</a></li>
@@ -30,7 +30,7 @@
     
     function setToggleState(isChecked) {
       themeToggle.checked = isChecked;
-      const theme = isChecked ? "{% static 'css/bootstrap.css' %}" : "{% static 'css/bootstrap_light.css' %}";
+      const theme = isChecked ? "{% static 'css/bootstrap_dark.css' %}" : "{% static 'css/bootstrap_light.css' %}";
       applyTheme(theme);
       localStorage.setItem('toggleState', theme);
     }
@@ -54,7 +54,7 @@
     // Set initial toggle state based on stored preference
     const savedToggleState = localStorage.getItem('toggleState');
     if (savedToggleState) {
-      const isChecked = savedToggleState === "{% static 'css/bootstrap.css' %}";
+      const isChecked = savedToggleState === "{% static 'css/bootstrap_dark.css' %}";
       setToggleState(isChecked);
     }
     

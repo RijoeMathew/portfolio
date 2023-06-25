@@ -1,0 +1,94 @@
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(83, 110, 185);
+    width: 95%;
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+
+a.weblinks{
+    text-decoration: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 5px;
+    position: relative;
+    top: 50px;
+}
+
+a.gitlinks
+{
+    text-decoration: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 5px;
+    position: relative;
+    top: 50px;
+    margin-left: 20px;
+}
+
+a.weblinks:hover{
+    background-color: rgb(99, 16, 55);
+}
+
+a.gitlinks:hover{
+    background-color: rgb(21, 99, 68);
+}
+
+div.first{
+    background-color: rgb(40, 55, 124);
+    width: fit-content;
+    padding: 10px 100px 100px 100px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+
+div.second{
+    background-color: rgb(40, 55, 124);
+    width: fit-content;
+    padding: 10px 100px 100px 100px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+
+.table-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px;
+}
+
+video:hover{
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+video{
+    transition: 0.5s;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .table-container {
+        flex-direction: column;
+    }
+
+    div.second{
+        position: relative;
+        top: 150px;
+    }
+}
