@@ -12,6 +12,7 @@ h2{
 a.weblinks{
     text-decoration: none;
     color: white;
+    background-color: rgb(9, 34, 24);
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;
@@ -22,19 +23,12 @@ a.gitlinks
 {
     text-decoration: none;
     color: white;
+    background-color: rgb(9, 34, 24);
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;
     top: 50px;
     margin-left: 20px;
-}
-
-a.weblinks:hover{
-    background-color: rgb(9, 9, 48);
-}
-
-a.gitlinks:hover{
-    background-color: rgb(9, 34, 24);
 }
 
 div.first{
@@ -88,7 +82,7 @@ video{
         padding-bottom: 50px;
         padding-left: 20px;
         padding-right: 20px;
-        width: 350px;
+        width: 300px;
     }
 
     div.second{
@@ -97,7 +91,7 @@ video{
         padding-bottom: 50px;
         padding-left: 20px;
         padding-right: 20px;
-        width: 350px;
+        width: 300px;
         margin-bottom: 100px;
     }
    
@@ -111,8 +105,12 @@ video{
     }
 
     video{
-        width: 320px;
-        height: 240px;
+        width: 300px;
+        height: 220px;
+    }
+
+    video:hover{
+        scale: 1;
     }
 
 }
