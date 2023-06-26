@@ -62,7 +62,26 @@ a.nav-small{
     display: none;
    }
 
-   a.nav-small img{
-    filter: brightness(100);
+   a.nav-small{
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(40, 55, 124);
+    margin: auto;
+    float: left;
+    position: relative;
+    left: -50px;
+    top: 25px;
    }
+
+   ul{
+    height: 100px;
+   }
+
+img.nav-icon{
+    filter: invert(100%);
+}
+   
+
 }

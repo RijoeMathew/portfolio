@@ -60,10 +60,19 @@
     background-color: black; /* Add this line to set the background color to black */
   }
   
+  li.toggle{
+    float: right;
+    padding: 10px 20px;
+    position: relative;
+
+  }
 
   /* Media query for mobile devices */
 @media (max-width: 600px) {
   li.toggle{
-    padding: 0px 10px !important;
+    position: inherit;
+    top: 8px;
+    right: -5px;
+    padding: 10px 15px;
   }
 }

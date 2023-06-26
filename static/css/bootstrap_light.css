@@ -4,6 +4,9 @@ body{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    padding-bottom: 100px;
+    margin: auto;
 }
 
 
@@ -55,14 +58,13 @@ a.nav-small{
 }
 
 @media (max-width: 600px) {
-   a.nav-small{
-    display: inline;
-   }
+   
    a.nav{
     display: none;
    }
 
    a.nav-small{
+    display: inline;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 10px;
@@ -72,13 +74,20 @@ a.nav-small{
     float: left;
     position: relative;
     left: -50px;
-    top: 25px;
+    top: 0px;
+   }
+
+   a.nav-small.active{
+    background-color: rgb(202, 110, 77);
    }
 
    ul{
-    height: 100px;
+    height: 50px;
    }
 
+img.nav-icon{
+    filter: invert(100%);
+}
    
 
 }

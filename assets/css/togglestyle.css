@@ -60,3 +60,10 @@
     background-color: black; /* Add this line to set the background color to black */
   }
   
+
+  /* Media query for mobile devices */
+@media (max-width: 600px) {
+  li.toggle{
+    padding: 0px 10px !important;
+  }
+}
