@@ -1,0 +1,51 @@
+.slider {
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+    left: 20px;
+    font-size: 300px;
+  }
+  
+  .slide-in {
+    display: inline-block;
+    animation: slide-in 3s forwards;
+    white-space: nowrap;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+      }
+  }
+
+  .pic-slider {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
+
+  .pic-slide-in {
+    display: inline-block;
+    animation: pic-slide-in 3s forwards;
+    white-space: nowrap;
+  }
+
+  @keyframes pic-slide-in {
+    0% {
+      transform: translateX(200%);
+    }
+    50% {
+        transform: translateX(200%);
+      }
+    100% {
+        transform: translateX(0%);
+      }
+  }

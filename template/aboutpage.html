@@ -5,10 +5,140 @@
 {% block title %}<title>About</title>{% endblock title %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/about_page_light.css' %}"> 
+<link id="about-theme-style" rel="stylesheet" href="{% static 'css/about_page_light.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/about_page_animate.css' %}"> 
 {% include 'nav_bar.html' %}
 
-<div class="slide-down">
-    <h1>Who Am I?</h1>
+<div class="slider">
+    <span class="slide-in">Who Am I?</span>
 </div>
+
+<div class="pic-slider">
+    <span class="pic-slide-in"><img class="profile-pic" src="{% static 'img/profile-pic.jpg' %}" alt="profile-pic"></span>
+</div>
+
+<div class="container">
+	<div class="field">
+		<div class="scroll"></div>
+	</div>
+</div>
+
+<div class="about-me-1">
+    <span>
+        Postgraduation in Business Information Technology
+        from Seneca College, Toronto, Ontario, Canada
+    </span>
+</div>
+
+<div class="about-me-2">
+    <span>
+        Bachelor of Technology in Electronics and Communication Engineering
+        from Mahatma Gandhi University, Kottayam, Kerala, India
+    </span>
+</div>
+
+
+<ul class="bottom-bar">
+    <li><a href="https://www.linkedin.com/in/rijoemathew/" target="_blank"><img class="social-media-icons" src="{% static 'img/linkedin-icon.png' %}" alt="linkedin-icon"></a></li>
+    <li><a href="https://github.com/RijoeMathew" target="_blank"><img class="social-media-icons" src="{% static 'img/github-mark-white.png' %}" alt="github-icon"></a></li>
+    <div class="copyright"><small>&copy; Copyright 2023, Rijoe Mathew Portfolio. All Rights Reserved</small></div>        
+</ul>
+
+<script>
+    function toggleabouttheme() {
+        const aboutthemeStyle = document.getElementById('about-theme-style');
+        const themebaseStyle = document.getElementById('theme-style');
+        const baseUrl = window.location.origin;
+        if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap_dark.css' %}") {
+            aboutthemeStyle.href = "{% static 'css/about_page_dark.css' %}"
+        }
+        else {
+            aboutthemeStyle.href = "{% static 'css/about_page_light.css' %}"
+        }
+        localStorage.setItem('projecttheme', aboutthemeStyle.href);
+    }
+    
+    toggleabouttheme();
+    
+    themeToggle.addEventListener('change', toggleabouttheme);
+</script>
+
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+        var timeout;
+        return function () {
+          var context = this, args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+      
+      const slideInElements = document.querySelectorAll('.about-me-1');
+      
+      function slideInOnScroll() {
+        slideInElements.forEach(element => {
+          const slideInAt = (window.scrollY + window.innerHeight) - element.offsetHeight / 2;
+          const elementBottom = element.offsetTop + element.offsetHeight;
+          const isHalfShown = slideInAt > element.offsetTop;
+          const isNotScrolledPast = window.scrollY < elementBottom;
+          if (isHalfShown && isNotScrolledPast) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0)';
+          } else {
+            element.style.opacity = '0';
+            element.style.transform = 'translateX(-100%)';
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', debounce(slideInOnScroll));
+      
+</script>
+
+
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+        var timeout;
+        return function () {
+          var context = this, args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+      
+      const slideInElements2 = document.querySelectorAll('.about-me-2');
+      
+      function slideInOnScroll() {
+        slideInElements2.forEach(element => {
+          const slideInAt = (window.scrollY + window.innerHeight) - element.offsetHeight / 2;
+          const elementBottom = element.offsetTop + element.offsetHeight;
+          const isHalfShown = slideInAt > element.offsetTop;
+          const isNotScrolledPast = window.scrollY < elementBottom;
+          if (isHalfShown && isNotScrolledPast) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0%)';
+          } else {
+            element.style.opacity = '0';
+            element.style.transform = 'translateX(200%)';
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', debounce(slideInOnScroll));
+      
+</script>
+
+
 {% endblock content %}
