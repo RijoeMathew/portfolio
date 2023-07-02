@@ -17,25 +17,36 @@
     <span class="pic-slide-in"><img class="profile-pic" src="{% static 'img/profile-pic.jpg' %}" alt="profile-pic"></span>
 </div>
 
+<div class="name">
+  <span>
+    Rijoe Chacko Mathew
+  </span>  
+</div>
+
 <div class="container">
 	<div class="field">
 		<div class="scroll"></div>
 	</div>
 </div>
 
-<div class="about-me-1">
-    <span>
+<div id="content-start" class="about-me-left">    
         Postgraduation in Business Information Technology
         from Seneca College, Toronto, Ontario, Canada
-    </span>
 </div>
 
-<div class="about-me-2">
+<div class="about-me-right">
+  <span>
+      Technology Analyst at Infosys Limited, Bangaluru, India
+  </span>
+</div>
+
+<div class="about-me-left">
     <span>
         Bachelor of Technology in Electronics and Communication Engineering
         from Mahatma Gandhi University, Kottayam, Kerala, India
     </span>
 </div>
+
 
 
 <ul class="bottom-bar">
@@ -79,7 +90,7 @@
         };
       }
       
-      const slideInElements = document.querySelectorAll('.about-me-1');
+      const slideInElements = document.querySelectorAll('.about-me-left');
       
       function slideInOnScroll() {
         slideInElements.forEach(element => {
@@ -93,6 +104,13 @@
           } else {
             element.style.opacity = '0';
             element.style.transform = 'translateX(-100%)';
+          }
+
+          const isScrolledPast = window.scrollY > elementBottom;
+
+          if (isScrolledPast) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0%)';
           }
         });
       }
@@ -118,7 +136,7 @@
         };
       }
       
-      const slideInElements2 = document.querySelectorAll('.about-me-2');
+      const slideInElements2 = document.querySelectorAll('.about-me-right');
       
       function slideInOnScroll() {
         slideInElements2.forEach(element => {
@@ -132,6 +150,13 @@
           } else {
             element.style.opacity = '0';
             element.style.transform = 'translateX(200%)';
+          }
+
+          const isScrolledPast = window.scrollY > elementBottom;
+
+          if (isScrolledPast) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0%)';
           }
         });
       }

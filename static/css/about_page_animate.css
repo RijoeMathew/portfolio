@@ -26,16 +26,18 @@
 
   .pic-slider {
     overflow: hidden;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    position: relative;
+    top: -400px;    
+    text-align: center;
+    height: 800px;
+    width: 100%;
   }
   
 
   .pic-slide-in {
-    display: inline-block;
+    display: inline-block;    
     animation: pic-slide-in 3s forwards;
-    white-space: nowrap;
+    height: fit-content;
   }
 
   @keyframes pic-slide-in {
@@ -51,14 +53,14 @@
   }
 
 
-  .about-me-1 {
+  .about-me-left {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 0.5s, transform 0.5s;
   }
 
 
-  .about-me-2 {
+  .about-me-right {
     opacity: 0;
     transform: translateX(200%);
     transition: opacity 0.5s, transform 0.5s;
@@ -67,12 +69,12 @@
 
   .container {
     width: 100%;
-    height: 600px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 100px;
+    top: -600px;
   }
   
   .field {
@@ -83,8 +85,7 @@
   }
   
 
-  .scroll {
-    background-color: rgb(83, 110, 185);
+  .scroll {    
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -126,4 +127,21 @@
     40% {
       transform: translate(0);
     }
+  }
+
+
+  .name {   
+    animation: name-scroll-down 3s forwards;
+  }
+
+  @keyframes name-scroll-down {
+    0% {
+      transform: translateY(-1000%);
+    }
+    50% {
+        transform: translateY(-1000%);
+      }
+    100% {
+        transform: translateY(0%);
+      }
   }

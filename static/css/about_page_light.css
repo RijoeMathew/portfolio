@@ -32,30 +32,67 @@
     color: white;
   }
 
-  div.about-me-1{
+  div.about-me-left{   
     font-size: larger;
-    padding: 50px 50px;
-    width: 40%;
+    padding: 50px 50px; 
+    width: 30%;   
     background-color: rgb(83, 110, 185);
     border-radius: 10px;
-    color: white;
+    color: white; 
     position: relative;
-    left: 100px;
-    top: 100px;
+    left: 10%;
+    top: -500px;
+    margin-top: 10%;
   }
 
+  .about-me-left::after {
+    content: " ";
+    position: absolute;
+    top: -19%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent rgb(83, 110, 185) transparent;
+}
 
-  div.about-me-2{
+
+  div.about-me-right{
     font-size: larger;
     padding: 50px 50px;
-    width: 40%;
-    background-color: rgb(83, 110, 185);
+    width: 30%;
+    background-color: rgb(84, 194, 130);
     border-radius: 10px;
     color: white;
     position: relative;
+    top: -500px;
     right: 0px;
-    left: 1000px;
-    top: 400px;
+    left: 55%;
+    margin-top: 10%;
   }
   
-  
+
+  .about-me-right::after {
+    content: " ";
+    position: absolute;
+    top: -20%;
+    left: 90%;
+    margin-left: -5px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent rgb(84, 194, 130) transparent;
+}
+
+.name{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+  top: -700px;
+  color: rgb(40, 55, 124);
+  font-weight: bold;
+}
+
+.scroll{
+  background-color: rgb(83, 110, 185);
+}
