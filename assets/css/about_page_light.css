@@ -30,9 +30,92 @@
     color: white;
   }
 
-  div.about-me{
+  div.about-me-left{   
     font-size: larger;
-    padding: 10px 10px;
-    width: 50%;
+    padding: 50px 50px; 
+    width: 30%;   
+    background-color: rgb(83, 110, 185);
+    border-radius: 10px;
+    color: white; 
+    position: relative;
+    left: 10%;
+    top: -200px;
+    margin-top: 10%;
+  }
+
+  .about-me-left::after {
+    content: " ";
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent rgb(83, 110, 185) transparent;
+}
+
+
+  div.about-me-right{
+    font-size: larger;
+    padding: 50px 50px;
+    width: 30%;
+    background-color: rgb(84, 194, 130);
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    top: -200px;
+    right: 0px;
+    left: 55%;
+    margin-top: 10%;
   }
   
+
+  .about-me-right::after {
+    content: " ";
+    position: absolute;
+    top: -15%;
+    left: 90%;
+    margin-left: -5px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent rgb(84, 194, 130) transparent;
+}
+
+.name{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(40, 55, 124);
+  font-weight: bold;
+  position: relative;
+  top: -250px;
+}
+
+.scroll{
+  background-color: rgb(83, 110, 185);
+}
+
+@media (max-width: 600px) {
+
+  img.profile-pic{
+    transform: scale(0.2);
+    position: relative;
+    left: -29%;
+    top: -200px;
+  }
+
+  .name{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+    top: -500px;
+  }
+
+  .container{
+    position: relative;
+    top: -400px;
+  }
+  
+
+}

@@ -32,7 +32,7 @@ a.gitlinks
     margin-left: 20px;
 }
 
-div.first{
+div.project{
     background-color: rgb(40, 55, 124);
     width: fit-content;
     padding: 10px 100px 100px 100px;
@@ -41,20 +41,9 @@ div.first{
     text-align: center;
     position: relative;
     top: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
-
-
-div.second{
-    background-color: rgb(40, 55, 124);
-    width: fit-content;
-    padding: 10px 100px 100px 100px;
-    margin: auto;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    top: 100px;
-}
-
 
 .table-container {
     display: flex;
@@ -78,22 +67,14 @@ video{
 /* Media query for mobile devices */
 @media (max-width: 600px) {
 
-    div.first{
+    div.project{
+        top: 50px;
         padding-top: 5px;
         padding-bottom: 50px;
         padding-left: 20px;
         padding-right: 20px;
         width: 300px;
-    }
-
-    div.second{
-        top: 150px;
-        padding-top: 5px;
-        padding-bottom: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        width: 300px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
    
 
