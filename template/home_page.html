@@ -5,11 +5,42 @@
 {% block title %}<title>Home</title>{% endblock title %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/home_page_light.css' %}"> 
+<link id="home-theme-style" rel="stylesheet" href="{% static 'css/home_page_light.css' %}"> 
 {% include 'nav_bar.html' %}
 
 <div class="main">
-<p>Welcome to my website</p>
+    <h1>Chat with AI</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="user_message"></label>
+        <input type="text" name="user_message" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if user_message %}
+    <p><span id="usermsghead">You</span>  {{ user_message }}</p>
+    <p><span id="aimsghead">AI</span>  {{ ai_reply }}</p>
+    {% endif %}
 </div>
+
+<script>
+    function togglehometheme() {
+        const homethemeStyle = document.getElementById('home-theme-style');
+        const themebaseStyle = document.getElementById('theme-style');
+        const baseUrl = window.location.origin;
+        if (themebaseStyle.href == baseUrl + "{% static 'css/bootstrap_dark.css' %}") {
+            homethemeStyle.href = "{% static 'css/home_page_dark.css' %}"
+        }
+        else {
+            homethemeStyle.href = "{% static 'css/home_page_light.css' %}"
+        }
+        localStorage.setItem('hometheme', homethemeStyle.href);
+    }
+    
+    togglehometheme();
+    
+    themeToggle.addEventListener('change', togglehometheme);
+</script>
 
 {% endblock content %}

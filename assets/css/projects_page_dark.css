@@ -12,7 +12,7 @@ h2{
 a.weblinks{
     text-decoration: none;
     color: white;
-    background-color: rgb(9, 34, 24);
+    background-color: rgb(34, 63, 46);
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;
@@ -23,7 +23,7 @@ a.gitlinks
 {
     text-decoration: none;
     color: white;
-    background-color: rgb(9, 34, 24);
+    background-color: rgb(34, 63, 46);
     padding: 20px 20px;
     border-radius: 5px;
     position: relative;

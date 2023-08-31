@@ -91,6 +91,23 @@
   top: -250px;
 }
 
+.container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -200px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+}
+
 .scroll{
   background-color: rgb(83, 110, 185);
 }
@@ -117,5 +134,25 @@
     top: -400px;
   }
   
+  div.about-me-left {
+  width: 50%;
+  font-size: small;
+  margin-bottom: 150px;
+  }
+
+  div.about-me-right {
+    width: 50%;
+    font-size: small;
+    left: 10%;
+    margin-bottom: 150px;
+    }
+
+  .about-me-right::after {
+      left: 85%;
+  }
+
+  div.copyright{
+    font-size: smaller;
+  }
 
 }

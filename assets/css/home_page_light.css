@@ -1,0 +1,59 @@
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(83, 110, 185);
+    color: white;
+    width: auto;
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;    
+}
+
+div.main{
+    background-color: rgb(40, 55, 124);
+    width: 500px;
+    padding: 10px 100px 100px 100px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+input{
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px;
+    padding: 10px 10px;
+}
+
+button{
+    color: white;
+    background-color: rgb(33, 146, 150);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px;
+    padding: 15px 15px;
+    margin-left: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+
+    div.main{
+        top: 50px;
+        padding-top: 5px;
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 300px;
+        margin-bottom: 50px;
+    }
+}
