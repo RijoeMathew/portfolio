@@ -44,6 +44,39 @@ button:hover{
     cursor: pointer;
 }
 
+.circle-container {
+    display: flex;
+    align-items: center;
+}
+
+
+#usermsghead {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(101, 75, 161);
+    border-radius: 50%;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px;
+    padding: 12px 12px;
+}
+
+#aimsghead {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(194, 133, 64);
+    border-radius: 50%;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px;
+    padding: 12px 12px;
+}
+
+
 
 @media (max-width: 600px) {
 
