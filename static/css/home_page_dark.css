@@ -15,11 +15,11 @@ div.main{
     padding: 10px 100px 100px 100px;
     margin: auto;
     border-radius: 10px;
-    text-align: center;
     position: relative;
     top: 100px;
     margin-top: 50px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 input{
@@ -62,6 +62,7 @@ button:hover{
     height: 20px; /* Adjust the size as needed */
     margin-right: 10px;
     padding: 12px 12px;
+    float: left;
 }
 
 #aimsghead {
@@ -75,6 +76,26 @@ button:hover{
     height: 20px; /* Adjust the size as needed */
     margin-right: 10px;
     padding: 12px 12px;
+    float: left;
+}
+
+#usermsg{
+    margin-top: 50px;
+}
+
+#aimsg{
+    margin-top: 75px;
+}
+
+
+#usermsgresult{    
+    text-align: justify;
+    line-height: 2;
+}
+
+#aimsgresult{    
+    text-align: justify;
+    line-height: 2;
 }
 
 

@@ -19,8 +19,8 @@
     </form>
 
     {% if user_message %}
-    <p><span id="usermsghead">You</span>  {{ user_message }}</p>
-    <p><span id="aimsghead">AI</span>  {{ ai_reply }}</p>
+    <p id="usermsg"><span id="usermsghead">You</span><p id="usermsgresult">{{ user_message }}</p></p>
+    <p id="aimsg"><span id="aimsghead">AI</span><p id="aimsgresult">{{ ai_reply }}</p></p>
     {% endif %}
 </div>
 
